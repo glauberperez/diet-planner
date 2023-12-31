@@ -1,15 +1,9 @@
-import { useState } from 'react'
-import { Switch, Tab } from '@headlessui/react'
-
-import Navbar from '../components/Navbar'
 
 
 const Welcome = () => {
 
   return (
     <>
-
-    <Navbar/>
 
     <main className="py-5">
 

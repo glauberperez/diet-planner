@@ -1,11 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Switch } from '@headlessui/react'
 
 const Navbar = () => {
 
   const [darkmode, setDarkmode] = useState(false) // need to make dark mode works, that's just a base for it
 
-    return(
+  useEffect(() => {
+    if (darkmode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+    console.log("dark mode changed: " + darkmode)
+  }
+  , [darkmode])
+
+
+    return (
+
         <header>
         <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
@@ -32,6 +44,7 @@ const Navbar = () => {
                     } inline-block h-4 w-4 transform rounded-full bg-white transition`}
                   />
                 </Switch>
+
 
                 </div>
             </div>

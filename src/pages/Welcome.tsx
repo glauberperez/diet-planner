@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 const Welcome = () => {
 
@@ -15,7 +15,9 @@ const Welcome = () => {
           <h1 className="text-3xl font-semibold text-center mt-2">How it works?</h1>
           <p className="text-center mt-1">You can add your meals and calories and the app will calculate the total calories and macros for you</p>
 
-          <h1 className="text-2xl font-semibold text-center m-5">Get started</h1> 
+          <h1 className="text-2xl font-semibold text-center m-5">
+            <Link to="/" className="text-blue-500 hover:text-blue-600">Start now!</Link>
+            </h1> 
 
         </div>
 

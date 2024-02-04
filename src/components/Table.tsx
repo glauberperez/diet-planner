@@ -15,25 +15,16 @@ function Table () {
     const [data, setData] = useState([]);
 
 
-    fetch('https://run.mocky.io/v3/7a8d95ac-068f-46a0-abcb-18408ddb60af')
-    .then((res) => res.json())
-    .then((data) => {
-      setData(data);
-      console.log(typeof data);
-      console.log(data);
-    });
-
-    /*
     useEffect(() => {
-        fetch('https://run.mocky.io/v3/557ef283-9e8e-40ff-bdad-5e707eb11c67')
-          .then((res) => res.json())
-          .then((data) => {
+            fetch('https://run.mocky.io/v3/393ec0ab-ff86-4a3d-8244-9614a3a2b469')
+            .then((res) => res.json())
+            .then((data) => {
             setData(data);
-            console.log(data);
-          });
+            console.table(data);
+            });
           //eslint-disable-next-line
       }, []);
-      */
+      
 
     return (
         <div className="flex flex-col">
@@ -61,7 +52,7 @@ function Table () {
                         <td className="whitespace-nowrap px-6 py-4">654 kcal</td>
                     </tr>
 
-                    { /*
+                    { 
 
                         data.map( (item: Data) => {
                             return ( 
@@ -76,7 +67,6 @@ function Table () {
                             )
                         })
 
-                        */
                     }
 
                     </tbody>

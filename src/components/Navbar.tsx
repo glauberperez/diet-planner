@@ -1,9 +1,19 @@
 import { useState, useEffect } from 'react'
 import { Switch } from '@headlessui/react'
 
+import { FaGear } from "react-icons/fa6";
+
 const Navbar = () => {
 
   const [darkmode, setDarkmode] = useState(false) // need to make dark mode works, that's just a base for it
+
+  const [configuration, setConfiguration] = useState(false);
+
+  useEffect(() => {
+    console.log("changed: " + configuration)
+  }
+  , [configuration])
+
 
   useEffect(() => {
     if (darkmode) {
@@ -45,6 +55,14 @@ const Navbar = () => {
                   />
                 </Switch>
 
+                <Switch 
+                className="items-center ml-3"
+                checked={configuration}
+                onChange={setConfiguration}
+                >
+                    <FaGear className="text-2xl dark:text-white"/>
+                </Switch>
+
 
                 </div>
             </div>
@@ -54,3 +72,6 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+
+// `${configuration ? 'animate-spin animate-once' : 'animate-spin animate-once animate-reverse'} flex items-center ml-3` 

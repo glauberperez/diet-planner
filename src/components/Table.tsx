@@ -43,15 +43,6 @@ function Table () {
                     </tr>
                     </thead>
                     <tbody>
-                    <tr className="border-b transition duration-300 ease-in-out border-neutral-500 dark:hover:bg-neutral-600">
-                        <td className="whitespace-nowrap px-6 py-4 font-medium">Rice</td>
-                        <td className="whitespace-nowrap px-6 py-4">100 g</td>
-                        <td className="whitespace-nowrap px-6 py-4">20 g</td>
-                        <td className="whitespace-nowrap px-6 py-4">40 g</td>
-                        <td className="whitespace-nowrap px-6 py-4">40 g</td>
-                        <td className="whitespace-nowrap px-6 py-4">654 kcal</td>
-                    </tr>
-
                     { 
 
                         data.map( (item: Data) => {
@@ -68,7 +59,6 @@ function Table () {
                         })
 
                     }
-
                     </tbody>
                 </table>
                 </div>

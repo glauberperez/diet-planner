@@ -14,7 +14,7 @@ const Main = () => {
 
         <div className="flex flex-wrap justify-center items-center mx-auto max-w-screen-xl backdrop-blur-3xl bg-gray-800">
 
-            <Table />
+            <Table/>
 
         </div>
         

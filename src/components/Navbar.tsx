@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Switch } from '@headlessui/react'
+import { Switch, Menu } from '@headlessui/react' // menu from configuration
 
 import { FaGear } from "react-icons/fa6";
 
@@ -55,13 +55,54 @@ const Navbar = () => {
                   />
                 </Switch>
 
-                <Switch 
-                className="items-center ml-3"
-                checked={configuration}
-                onChange={setConfiguration}
+                {
+                  // HeadlessUI configuration menu
+                }
+
+
+                <Menu
+                  as="div"
+                  className="relative inline-block text-left"
                 >
+                  <Menu.Button className="items-center ml-3">
                     <FaGear className="text-2xl dark:text-white"/>
-                </Switch>
+                  </Menu.Button>
+
+                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right bg-white dark:bg-gray-800 border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div className="px-1 py-1 ">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={`${
+                              active ? 'bg-gray-100 dark:bg-gray-700' : 'text-gray-900 dark:text-white'
+                            } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                          >
+                            Dark Mode
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </div>
+                    <div className="px-1 py-1">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={`${
+                              active ? 'bg-gray-100 dark:bg-gray-700' : 'text-gray-900 dark:text-white'
+                            } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                          >
+                            Configuration
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </Menu>
+                
+
+
+
 
 
                 </div>

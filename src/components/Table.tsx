@@ -16,7 +16,7 @@ function Table () {
 
 
     useEffect(() => {
-            fetch('https://run.mocky.io/v3/393ec0ab-ff86-4a3d-8244-9614a3a2b469')
+            fetch('https://run.mocky.io/v3/b1b955fd-f1d6-4cf8-9d5a-b5f41611cef5')
             .then((res) => res.json())
             .then((data) => {
             setData(data);

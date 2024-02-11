@@ -20,7 +20,7 @@ const NavbarMenu = () => {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
             >
-                <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
+                <Menu.Items className="absolute z-10 right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                     <div className="px-1 py-1 ">
                         <Menu.Item>
                             {({ active }) => (

@@ -3,11 +3,11 @@ import { Switch, Transition, Menu } from '@headlessui/react' // menu from config
 
 import { FaGear } from "react-icons/fa6";
 
+import NavbarMenu from './NavbarMenu';
+
 const Navbar = () => {
 
   const [darkmode, setDarkmode] = useState(false) // need to make dark mode works, that's just a base for it
-
-  const [showMenu, setShowMenu] = useState(false);
 
 
   useEffect(() => {
@@ -50,49 +50,7 @@ const Navbar = () => {
                   />
                 </Switch>
 
-                <Menu
-                  as="div"
-                  className="relative inline-block text-left"
-                >
-                  <Menu.Button className="items-center ml-3" onClick={() => setShowMenu(!showMenu)}>
-                    <FaGear className="text-2xl dark:text-white"/>
-                  </Menu.Button>
-
-                  <Transition
-                    as={Menu}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-
-                    <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
-                      <div className="px-1 py-1 ">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={`${
-                                active ? 'bg-gray-100' : ''
-                              } flex justify-between w-full px-4 py-2 text-sm leading-5 text-gray-700`}
-                            >
-                              Configuration
-                            </a>
-                          )}
-                        </Menu.Item>
-                      </div>
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
-
-                
-                
-
-
-
-
+                <NavbarMenu/>
 
                 </div>
             </div>

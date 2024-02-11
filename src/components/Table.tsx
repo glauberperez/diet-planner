@@ -10,7 +10,7 @@ type Data = {
     calories: string;
   };
 
-function Table () {
+const Table = () => {
 
     const [data, setData] = useState([]);
 

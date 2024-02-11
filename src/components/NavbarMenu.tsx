@@ -1,6 +1,18 @@
 import { useState } from "react"
-import { Menu, Transition } from '@headlessui/react'
+import { Menu, Transition, Dialog } from '@headlessui/react'
 import { FaGear } from "react-icons/fa6"
+
+
+const links = [
+    {
+        name: 'Register Food',
+        href: '#',
+    },
+    {
+        name: 'Settings',
+        href: '#',
+    },
+]
 
 const NavbarMenu = () => {
 
@@ -22,18 +34,20 @@ const NavbarMenu = () => {
             >
                 <Menu.Items className="absolute z-10 right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                     <div className="px-1 py-1 ">
-                        <Menu.Item>
-                            {({ active }) => (
-                                <a
-                                    href="#"
-                                    className={`${
-                                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
-                                >
-                                    Settings
-                                </a>
-                            )}
-                        </Menu.Item>
+                        {links.map((link, index) => (
+                            <Menu.Item key={index}>
+                                {({ active }) => (
+                                    <a
+                                        href={link.href}
+                                        className={`${
+                                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                                        } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                    >
+                                        {link.name}
+                                    </a>
+                                )}
+                            </Menu.Item>
+                        ))}
                     </div>
                 </Menu.Items>
             </Transition>
@@ -42,3 +56,17 @@ const NavbarMenu = () => {
 }
 
 export default NavbarMenu;
+
+
+<Menu.Item>
+{({ active }) => (
+    <a
+        href="#"
+        className={`${
+            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+        } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+    >
+        Settings
+    </a>
+)}
+</Menu.Item>
